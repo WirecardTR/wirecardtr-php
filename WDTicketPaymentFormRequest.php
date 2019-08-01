@@ -20,6 +20,7 @@ class WDTicketPaymentFormRequest
     public  $SuccessURL; 
     public  $ExtraParam; 
     public  $PaymentContent; 
+    public  $InstallmentOptions; 
     public  $PaymentTypeId; 
     public  $BaseUrl;
 	    public  $CustomerInfo; 
@@ -55,6 +56,7 @@ class WDTicketPaymentFormRequest
         "    <ExtraParam>" . $this->ExtraParam . "</ExtraParam>\n" .
         "    <PaymentContent>" . $this->PaymentContent . "</PaymentContent>\n" .
         "    <PaymentTypeId>" . $this->PaymentTypeId . "</PaymentTypeId>\n" .
+        "    <InstallmentOptions>" . $this->InstallmentOptions . "</InstallmentOptions>\n" .
         "</WIRECARD>";
         $xml_data = iconv("UTF-8","ISO-8859-9", $xml_data);
          return $xml_data;

@@ -92,6 +92,7 @@ include('menu.php');
     $request->PaymentContent = "Bilgisayar";
     $request->Description = "BLGSYR01";
     $request->PaymentTypeId = 1;
+    $request->InstallmentOptions = 0;
 	$request->CustomerInfo= new CustomerInfo();
     $request->CustomerInfo->CustomerName="ahmet";
     $request->CustomerInfo->CustomerSurname="yılmaz";
