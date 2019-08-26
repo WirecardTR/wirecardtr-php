@@ -23,6 +23,8 @@ class MarketPlaceMPSale3DSECRequest
     public  $SubPartnerId; 
     public  $PaymentContent; 
     public  $BaseUrl;
+    public  $InstallmentOptions;
+    public  $CommissionRateList;
 
 
     public static function Execute(MarketPlaceMPSale3DSECRequest $request)
@@ -51,6 +53,13 @@ class MarketPlaceMPSale3DSECRequest
         "    <CommissionRate>" . $this->CommissionRate . "</CommissionRate>\n" .
         "    <SubPartnerId>" . $this->SubPartnerId . "</SubPartnerId>\n" .
         "    <PaymentContent>" . $this->PaymentContent . "</PaymentContent>\n" .
+        "    <InstallmentOptions>" . $this->InstallmentOptions . "</InstallmentOptions>\n" .
+        "    <CommissionRateList>\n" .
+        "    <Inst0>" . $this->CommissionRateList->Inst0 . "</Inst0>\n" .
+        "    <Inst3>" . $this->CommissionRateList->Inst3 . "</Inst3>\n" .
+        "    <Inst6>" . $this->CommissionRateList->Inst6 . "</Inst6>\n" .
+        "    <Inst9>" . $this->CommissionRateList->Inst9 . "</Inst9>\n" .
+        "    </CommissionRateList>\n" .
         "</WIRECARD>";
         $xml_data = iconv("UTF-8","ISO-8859-9", $xml_data);
          return $xml_data;

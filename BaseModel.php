@@ -6,6 +6,13 @@ class Token
     public  $UserCode; 
     public  $Pin;
 }
+class CommissionRateList
+{
+    public  $Inst0;
+    public  $Inst3;
+    public  $Inst6;
+    public  $Inst9;
+}
 
 class Product
 {

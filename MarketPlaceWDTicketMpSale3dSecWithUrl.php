@@ -10,7 +10,9 @@
     <label style="font-weight:bold;">Fiyat &nbsp;:  &nbsp;</label> 0,01 TL <br>
     <label style="font-weight:bold;">MPAY &nbsp;:  &nbsp;</label> Benzersiz işlem numarası. Bu parametre işlem sonucunda aynen bize geri gönderilir. <br>
     <label style="font-weight:bold;">İşlem İçeriği &nbsp;:  &nbsp;</label>Bilgisayar Ödemesi <br>
-    <label style="font-weight:bold;">Comission Rate &nbsp;:  &nbsp;</label>1 <br>
+    <label style="font-weight:bold;">Commission Rate &nbsp;:  &nbsp;</label>1 <br>
+    <label style="font-weight:bold;">Installment Options &nbsp;:  &nbsp;</label>3 <br>
+    <label style="font-weight:bold;">Commission Rate List &nbsp;:  &nbsp;</label>Komisyon oranları listesi<br>
     <label style="font-weight:bold;">Açıklama &nbsp;:  &nbsp;</label>Ödeme işleminin tanımı <br>
     <label style="font-weight:bold;">Ekstra Parametre &nbsp;:  &nbsp;</label>Bu alanın boş olarak gönderilmesi gerekmektedir. <br>
 </fieldset>
@@ -73,6 +75,14 @@
     $request->ErrorURL = "http://localhost:5000/fail.php";
     $request->SuccessURL = "http://localhost:5000/success.php";
     $request->CommissionRate = 100;//%1
+    
+    $request->InstallmentOptions = 0;
+    $request->CommissionRateList = new CommissionRateList();
+    $request->CommissionRateList->Inst0 = 110;
+    $request->CommissionRateList->Inst3 = 130;
+    $request->CommissionRateList->Inst6 = 160;
+    $request->CommissionRateList->Inst9 = 190;
+
     $request->Price=1;////0,01 TL
     $request->SubPartnerId = $_POST["subPartnerId"];
     $response = MarketPlaceMPSale3DSECRequest::execute($request); // PazarYeri Ortak Ödeme sayfası servisinin başlatılması için gerekli servis çağırısını temsil eder.
