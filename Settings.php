@@ -28,10 +28,10 @@ class Settings
 
     public function __construct()
     {
-        $this->environmentSettings();
+        $this->initEnvironmentSettings();
     }
 
-    public function environmentSettings()
+    public function initEnvironmentSettings()
     {
         $this->UserCode = "";
         $this->Pin = "";

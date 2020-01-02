@@ -3,7 +3,7 @@
 class SettingsTest extends Settings
 {
 
-    public function environmentSettings()
+    public function initEnvironmentSettings()
     {
         $this->UserCode = "";
         $this->Pin = "";
